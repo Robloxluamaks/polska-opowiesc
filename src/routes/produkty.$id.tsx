@@ -26,7 +26,7 @@ function Detail() {
   return (
     <Layout>
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2">
-        <img src={p.image} alt={p.name} width={1024} height={1280} className="w-full rounded-3xl border border-border object-cover" />
+        <img src={p.image} alt={p.name} width={800} height={800} className="w-full rounded-3xl border border-border object-cover" />
         <div>
           <p className="font-bold uppercase tracking-widest text-primary">{p.name}</p>
           <h1 className="mt-2 text-5xl">{p.flavor}</h1>
