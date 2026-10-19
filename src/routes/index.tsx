@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import mascot from "@/assets/mascot.png";
-import product from "@/assets/product.jpg";
+import duo from "@/assets/hero-duo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,7 +33,7 @@ function Index() {
           </div>
           <div className="relative">
             <div className="absolute inset-0 rounded-3xl bg-primary/20 blur-3xl" />
-            <img src={product} alt="BANG BLAZE 40K" width={1024} height={1280} className="relative mx-auto max-h-[560px] rounded-3xl object-cover" />
+            <img src={duo.url} alt="BANG BLAZE 40K — dwa urządzenia" width={1500} height={1500} className="relative mx-auto max-h-[560px] rounded-3xl object-cover" />
           </div>
         </div>
       </section>

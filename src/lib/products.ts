@@ -1,4 +1,13 @@
-import product from "@/assets/product.jpg";
+import duo from "@/assets/hero-duo.png.asset.json";
+import grape from "@/assets/grape.png.asset.json";
+import cherry from "@/assets/cherry.png.asset.json";
+import mixed from "@/assets/mixed-fruit.png.asset.json";
+
+const photos: Record<string, string> = {
+  "grape-blueberry-grape": grape.url,
+  "cherry-cherry-coke": cherry.url,
+  "mixed-fruit-triple-berry": mixed.url,
+};
 
 export type Product = { id: string; name: string; flavor: string; image: string; description: string; ice: boolean };
 
@@ -42,7 +51,7 @@ export const products: Product[] = flavors.map((f) => ({
   id: slug(f),
   name: "BANG BLAZE 40K",
   flavor: f,
-  image: product,
+  image: photos[slug(f)] ?? duo.url,
   ice: /ice|mint|arctic/i.test(f),
   description: `Dwa smaki w jednym urządzeniu: ${f.replace(" & ", " oraz ")}.`,
 }));

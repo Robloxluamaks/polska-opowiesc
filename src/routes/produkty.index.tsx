@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Layout } from "@/components/Layout";
 import { products } from "@/lib/products";
+import flavors from "@/assets/flavors.png.asset.json";
 
 export const Route = createFileRoute("/produkty/")({
   head: () => ({
@@ -43,7 +44,7 @@ function Products() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((p) => (
             <Link key={p.id} to="/produkty/$id" params={{ id: p.id }} className="group overflow-hidden rounded-3xl border border-border bg-card transition hover:-translate-y-1 hover:border-primary hover:glow">
-              <img src={p.image} alt={`${p.name} — ${p.flavor}`} width={1024} height={1280} loading="lazy" className="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-105" />
+              <img src={p.image} alt={`${p.name} — ${p.flavor}`} width={800} height={800} loading="lazy" className="aspect-square w-full object-cover transition duration-500 group-hover:scale-105" />
               <div className="p-6">
                 <p className="text-xs font-bold uppercase tracking-widest text-primary">{p.name}</p>
                 <h2 className="mt-1 text-2xl">{p.flavor}</h2>
@@ -53,6 +54,9 @@ function Products() {
             </Link>
           ))}
           {list.length === 0 && <p className="text-muted-foreground">Brak produktów dla wybranych filtrów.</p>}
+        </div>
+        <div className="mt-16 overflow-hidden rounded-3xl border border-border">
+          <img src={flavors.url} alt="Przegląd smaków BANG BLAZE 40K" width={434} height={700} loading="lazy" className="mx-auto w-full max-w-md" />
         </div>
       </section>
     </Layout>

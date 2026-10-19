@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import mascot from "@/assets/mascot.png";
+import banner from "@/assets/raspberry.png.asset.json";
 
 export const Route = createFileRoute("/o-marce")({
   head: () => ({
@@ -28,6 +29,9 @@ function About() {
             Nasza maskotka — małpa w złotej koronie i czarnych okularach — to symbol pewności siebie i miejskiego luzu. Korona mówi o ambicji, okulary o stylu, a uśmiech o tym, że nie bierzemy się zbyt poważnie.
           </p>
         </div>
+      </section>
+      <section className="mx-auto max-w-4xl px-4">
+        <img src={banner.url} alt="BANG BLAZE 40K — grafika produktowa" width={800} height={800} loading="lazy" className="w-full rounded-3xl border border-border" />
       </section>
     </Layout>
   );
