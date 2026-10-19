@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DostawaIZwrotyRouteImport } from './routes/dostawa-i-zwroty'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as OMarceRouteImport } from './routes/o-marce'
+import { Route as PolitykaPrywatnosciRouteImport } from './routes/polityka-prywatnosci'
+import { Route as RegulaminRouteImport } from './routes/regulamin'
+import { Route as ProduktyIndexRouteImport } from './routes/produkty.index'
+import { Route as ProduktyIdRouteImport } from './routes/produkty.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DostawaIZwrotyRoute = DostawaIZwrotyRouteImport.update({
+  id: '/dostawa-i-zwroty',
+  path: '/dostawa-i-zwroty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OMarceRoute = OMarceRouteImport.update({
+  id: '/o-marce',
+  path: '/o-marce',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PolitykaPrywatnosciRoute = PolitykaPrywatnosciRouteImport.update({
+  id: '/polityka-prywatnosci',
+  path: '/polityka-prywatnosci',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegulaminRoute = RegulaminRouteImport.update({
+  id: '/regulamin',
+  path: '/regulamin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProduktyIndexRoute = ProduktyIndexRouteImport.update({
+  id: '/produkty/',
+  path: '/produkty/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProduktyIdRoute = ProduktyIdRouteImport.update({
+  id: '/produkty/$id',
+  path: '/produkty/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/dostawa-i-zwroty': typeof DostawaIZwrotyRoute
+  '/kontakt': typeof KontaktRoute
+  '/o-marce': typeof OMarceRoute
+  '/polityka-prywatnosci': typeof PolitykaPrywatnosciRoute
+  '/regulamin': typeof RegulaminRoute
+  '/produkty/$id': typeof ProduktyIdRoute
+  '/produkty/': typeof ProduktyIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/dostawa-i-zwroty': typeof DostawaIZwrotyRoute
+  '/kontakt': typeof KontaktRoute
+  '/o-marce': typeof OMarceRoute
+  '/polityka-prywatnosci': typeof PolitykaPrywatnosciRoute
+  '/regulamin': typeof RegulaminRoute
+  '/produkty/$id': typeof ProduktyIdRoute
+  '/produkty': typeof ProduktyIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/dostawa-i-zwroty': typeof DostawaIZwrotyRoute
+  '/kontakt': typeof KontaktRoute
+  '/o-marce': typeof OMarceRoute
+  '/polityka-prywatnosci': typeof PolitykaPrywatnosciRoute
+  '/regulamin': typeof RegulaminRoute
+  '/produkty/$id': typeof ProduktyIdRoute
+  '/produkty/': typeof ProduktyIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/dostawa-i-zwroty'
+    | '/kontakt'
+    | '/o-marce'
+    | '/polityka-prywatnosci'
+    | '/regulamin'
+    | '/produkty/$id'
+    | '/produkty/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/dostawa-i-zwroty'
+    | '/kontakt'
+    | '/o-marce'
+    | '/polityka-prywatnosci'
+    | '/regulamin'
+    | '/produkty/$id'
+    | '/produkty'
+  id:
+    | '__root__'
+    | '/'
+    | '/dostawa-i-zwroty'
+    | '/kontakt'
+    | '/o-marce'
+    | '/polityka-prywatnosci'
+    | '/regulamin'
+    | '/produkty/$id'
+    | '/produkty/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DostawaIZwrotyRoute: typeof DostawaIZwrotyRoute
+  KontaktRoute: typeof KontaktRoute
+  OMarceRoute: typeof OMarceRoute
+  PolitykaPrywatnosciRoute: typeof PolitykaPrywatnosciRoute
+  RegulaminRoute: typeof RegulaminRoute
+  ProduktyIdRoute: typeof ProduktyIdRoute
+  ProduktyIndexRoute: typeof ProduktyIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dostawa-i-zwroty': {
+      id: '/dostawa-i-zwroty'
+      path: '/dostawa-i-zwroty'
+      fullPath: '/dostawa-i-zwroty'
+      preLoaderRoute: typeof DostawaIZwrotyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/o-marce': {
+      id: '/o-marce'
+      path: '/o-marce'
+      fullPath: '/o-marce'
+      preLoaderRoute: typeof OMarceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/polityka-prywatnosci': {
+      id: '/polityka-prywatnosci'
+      path: '/polityka-prywatnosci'
+      fullPath: '/polityka-prywatnosci'
+      preLoaderRoute: typeof PolitykaPrywatnosciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/regulamin': {
+      id: '/regulamin'
+      path: '/regulamin'
+      fullPath: '/regulamin'
+      preLoaderRoute: typeof RegulaminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produkty/': {
+      id: '/produkty/'
+      path: '/produkty'
+      fullPath: '/produkty/'
+      preLoaderRoute: typeof ProduktyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produkty/$id': {
+      id: '/produkty/$id'
+      path: '/produkty/$id'
+      fullPath: '/produkty/$id'
+      preLoaderRoute: typeof ProduktyIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DostawaIZwrotyRoute: DostawaIZwrotyRoute,
+  KontaktRoute: KontaktRoute,
+  OMarceRoute: OMarceRoute,
+  PolitykaPrywatnosciRoute: PolitykaPrywatnosciRoute,
+  RegulaminRoute: RegulaminRoute,
+  ProduktyIdRoute: ProduktyIdRoute,
+  ProduktyIndexRoute: ProduktyIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
